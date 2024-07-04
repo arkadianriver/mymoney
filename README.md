@@ -1,0 +1,49 @@
+
+# mymoney
+
+Keep track of the total balance of your accounts and your categorized monthly spending
+in a semi-automated way.
+
+## Setup
+
+Requires [Python 3.9 or later](https://wiki.python.org/moin/BeginnersGuide/Download).
+
+
+## To use
+
+After you set up a project folder and the `config.yml` for all of your accounts, periodically:
+
+1. Decide the period this run pertains to and create an input folder for it. I use monthly periods.
+   For example, I might create a `_2024/input/202404` folder for April in the `_2024` project.
+
+1. From your banking websites, download the transactions as CSV files into that `{project_name}/input/{period}` folder.
+   Be sure the files contain only the transactions for the period.
+   (Eventually, this could be automated too with a banking API, such as the one that Stripe membership provides.)
+
+1. Run:
+
+        mymoney {period}
+
+   As it reads each transaction, you'll be asked to categorize the transaction based on
+   a regular expression search string, so that the next time it runs across the same description,
+   it can automatically be assigned a category without asking.
+   (The more you use it, the more automated it is.)
+
+   > [!TIP]
+   >
+   > If you use monthly periods like I do, named as `YYYYMM`,
+   > you can get the year-to-date aggregate of the monthly periods for that year,
+   > by running:
+   >
+   >     mymoney <year>YTD
+
+That's it! When it's done the following visualizations will be in the
+folder `{project_name}/{period}/reports`.
+
+|Report|Description|
+|---|---|
+|`avg_and_balance.txt`|short summary of the total ending balance and average monthly spending (only really useful for `YTD` periods)|
+|`balance_{period}.html`|the total running balance of all your accounts as a line graph|
+|`breakdown_{period}.md`|a document of transactions, organized by category|
+|`spending_{period}.html`|a monthly spending bar chart, with a category breakdown in each bar|
+|`transactions_{period}.txt`|sorted list of all transactions|
