@@ -160,7 +160,13 @@ def categories_graph(prj, df):
 	months = spending_df.apply(lambda row: pd.to_datetime(row.Date).strftime('%Y-%m'), axis=1)
 	spending_df = spending_df.assign(Month=months.values)
 
-	fig = px.bar(spending_df, x="Month", y="Amount", color="Category", title=f"Expenses for {prj.period}")
+	# get sorted array of categories for legend
+	sorted_tmp = spending_df.loc[:,['Category']].drop_duplicates().sort_values(by='Category').to_numpy()
+	sorted_cats = [x for [x] in sorted_tmp]
+
+	fig = px.bar(spending_df, x="Month", y="Amount", color="Category",
+			  title=f"Expenses for {prj.period}",
+			  category_orders={ "Category": sorted_cats })
 	fig.write_html(f"{prj.reports}/spending_{prj.period}.html")
 
 	avg = spending_df.groupby(pd.PeriodIndex(spending_df['Date'], freq="M"))['Amount'].sum().mean()
