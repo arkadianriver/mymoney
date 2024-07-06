@@ -143,6 +143,14 @@ def dump_df(prj, df):
 			f.write(df.to_string())
 
 
+def monthly_net_income(prj, df):
+	
+	monthly_sums = df.groupby(pd.PeriodIndex(df['Date'], freq="M").strftime('%Y-%m'))['Amount'].sum()
+	fig = px.bar(monthly_sums, x=monthly_sums.index, y="Amount",
+			  title="Net monthly income (Profit+Loss)")
+	fig.write_html(f"{prj.reports}/monthly_net_{prj.period}.html")
+
+
 def categories_graph(prj, df):
 
 	spending_df = df.loc[~df['Category'].isin(['income', 'transfer'])] # filter out income and transfers
@@ -280,6 +288,9 @@ def main():
 
 	# Text dump of all the transactions (the dataframe)
 	dump_df(prj, df)
+
+	# HTML graph of monthly net income (P+L)
+	monthly_net_income(prj, df)
 
 	# Markdown and HTML document of transactions grouped by category
 	categories_report(prj, df)
