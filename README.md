@@ -8,6 +8,8 @@ in a semi-automated way.
 
 Requires [Python 3.9 or later](https://wiki.python.org/moin/BeginnersGuide/Download).
 
+TODO .. explain how to set up the `config.yml` file
+
 
 ## To use
 
@@ -19,6 +21,10 @@ After you set up a project folder and the `config.yml` for all of your accounts,
 1. From your banking websites, download the transactions as CSV files into that `{project_name}/input/{period}` folder.
    Be sure the files contain only the transactions for the period.
    (Eventually, this could be automated too with a banking API, such as the one that Stripe membership provides.)
+
+   For each bank you visit, also take note of the balance at the end
+   of the period you're tracking and add it to the `current_balance`
+   section of the `config.yml` file.
 
 1. Run:
 
@@ -37,7 +43,7 @@ After you set up a project folder and the `config.yml` for all of your accounts,
    >
    >     mymoney <year>YTD
 
-That's it! When it's done the following visualizations will be in the
+That's it! When it's done, the following visualizations will be in the
 folder `{project_name}/{period}/reports`.
 
 |Report|Description|
