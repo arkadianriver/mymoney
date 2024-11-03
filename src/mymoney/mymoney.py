@@ -4,6 +4,7 @@ Takes transaction CSVs from accounts and tallies up ins and outs.
 """
 import os, csv, locale, datetime, argparse, re, textwrap
 import plotly.express as px
+import plotly.graph_objects as go
 import pandas as pd
 from shutil import rmtree
 from markdown import markdown
@@ -141,6 +142,9 @@ def dump_df(prj, df):
 	with open(f"{prj.reports}/transactions_{prj.period}.txt", 'w', encoding='utf-8') as f:
 		with pd.option_context('display.max_rows', None, 'display.max_columns', None):
 			f.write(df.to_string())
+	with open(f"{prj.reports}/transactions_{prj.period}.csv", 'w', encoding='utf-8') as f:
+		with pd.option_context('display.max_rows', None, 'display.max_columns', None):
+			f.write(df.to_csv(float_format='%.2f'))
 
 
 def monthly_net_income(prj, df):
@@ -151,23 +155,43 @@ def monthly_net_income(prj, df):
 	fig.write_html(f"{prj.reports}/monthly_net_{prj.period}.html")
 
 
+def mkdate(str):
+	return datetime.datetime.strptime(str, '%Y-%m-%d')
+
+
 def categories_graph(prj, df):
 
-	spending_df = df.loc[~df['Category'].isin(['income', 'transfer'])] # filter out income and transfers
-	spending_df.loc[:,'Amount'] = spending_df['Amount'].mul(-1) # change - to + because it's an 'expenses' chart
-
+	spending_df = df.loc[~df['Category'].isin(['transfer'])] # filter out transfers
+	#spending_df.loc[:,'Amount'] = spending_df['Amount'].mul(-1) # change - to + because it's an 'expenses' chart
+	
 	# add a Month column based on the dates
 	months = spending_df.apply(lambda row: pd.to_datetime(row.Date).strftime('%Y-%m'), axis=1)
 	spending_df = spending_df.assign(Month=months.values)
 
-	# get sorted array of categories for legend
+	# add a Flow column to specify income or expense
+	flow = spending_df.apply(lambda row: 'Income' if row.Amount > 0 else 'Expense', axis=1)
+	spending_df = spending_df.assign(Flow=flow.values)
+
+	# add absolute value Amount based on Income/Expense
+	spending_df["AbsAmount"] = spending_df["Amount"].abs()
+
+	# add a MonthlyTotal column to see the resulting profit/loss for that month
+	spending_df['MonthlyTotal'] = spending_df.groupby(['Month'])['Amount'].transform('sum').apply(lambda x: "${:,.2f}".format(x))
+	
+	# get a sorted array of categories for a legend
 	sorted_tmp = spending_df.loc[:,['Category']].drop_duplicates().sort_values(by='Category').to_numpy()
 	sorted_cats = [x for [x] in sorted_tmp]
 
-	fig = px.bar(spending_df, x="Month", y="Amount", color="Category",
-			  title=f"Expenses for {prj.period}",
-			  category_orders={ "Category": sorted_cats })
-	fig.write_html(f"{prj.reports}/spending_{prj.period}.html")
+	gfig = go.Figure()
+	for cat in list(reversed(sorted_cats)):
+		tmp_df = spending_df.query(f"Category == '{cat}'")
+		gfig.add_trace(go.Bar(
+				x=[tmp_df["Month"], tmp_df["Flow"]],
+				y=tmp_df["AbsAmount"], # TODO: Set the hover and add spacing between groups
+				hovertext=cat,
+				name=cat))
+	gfig.update_layout(barmode="stack")
+	gfig.write_html(f"{prj.reports}/income_expenses_{prj.period}.html")
 
 	avg = spending_df.groupby(pd.PeriodIndex(spending_df['Date'], freq="M"))['Amount'].sum().mean()
 	return avg
