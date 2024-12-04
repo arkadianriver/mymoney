@@ -48,6 +48,7 @@ def slurp_account(prj: object, cats: object, account, date_col, desc_col, amt_co
 	'''Load and swizzle CSV data into our master transactions list'''
 	filename = f'./input/{prj.period}/{account}.csv'
 	acct_cfg = prj.config['format'][account]
+	debit_column = acct_cfg['trans_type'] if 'trans_type' in acct_cfg else None
 	if not os.path.exists(filename):
 		print(f'WARN: No CSV file found for the {account} account.')
 		return
@@ -64,9 +65,10 @@ def slurp_account(prj: object, cats: object, account, date_col, desc_col, amt_co
 			if valid_transaction(row, acct_cfg):
 				date = datetime.datetime.strptime(row[date_col], date_format).strftime('%Y-%m-%d') if date_format else row[date_col]
 				cat = cats.categorize(description=row[desc_col], amount=row[amt_col])
+				amount = -abs(float(row[amt_col])) if debit_column and row[debit_column].lower() == 'debit' else row[amt_col]
 				prj.transactions.append((
 					date,                       # date
-					locale.atof(row[amt_col]),  # amount
+					locale.atof(str(amount)),   # amount
 					account,                    # account
 					row[desc_col],              # description
 					cat			                # category
@@ -78,7 +80,7 @@ def df_from_transactions(prj):
 	# final statement balances
 	# recording the balance at time of last transaction in CSV (or online for WFB).
 	# Will use the final balance to determine the starting balance of the year.
-	statement_ending_balance = total([ locale.atof(x.replace('$','')) for x in prj.config['current_balances'].values() ])
+	statement_ending_balance = total([ locale.atof(x.replace('$','').replace(' ', '')) for x in prj.config['current_balances'].values() ])
 
 	# total transaction amounts starting from zero
 	transactions_ending_balance_from_zero = total([ x[1] for x in prj.transactions ])

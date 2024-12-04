@@ -13,6 +13,7 @@ format:
 #    columns:  [date_column, description_column, amount_column]
 #    row_order: (ascending, descending), default 'descending'
 #    date_format: default '%Y-%m-%d'
+#    trans_type: column that denotes 'credit' or 'debit' (when to change the amount to negative)
 #    rules: [ [ haystack, # column to search (not necessarily description)
 #               needle,   # regex used to search the column,
 #               action ],  # what to do if regex search matches (include|exclude)
@@ -43,6 +44,7 @@ format:
   credit_1:
     columns: [0,2,4]
     date_format: '%m/%d/%Y'
+    trans_type: 3
 
   credit_2:
     columns: [0,2,4]
