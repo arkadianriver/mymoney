@@ -14,7 +14,6 @@ class Project:
         self.period = period
         self.transactions = []
         self.input = f'{cwd}/input/{period}'
-        self.output = f'{cwd}/output/{period}'
         self.reports = f'{cwd}/reports/{period}'
         self.in_active_project = self.in_active_project()
 
@@ -29,8 +28,6 @@ class Project:
             self.ciao('Run the app from inside a project folder\nand create a project config file there.')
         if not os.path.exists(self.input):
             os.makedirs(f'{self.input}')
-        if not os.path.exists(self.output):
-            os.makedirs(f'{self.output}')
         if not os.path.exists(self.reports):
             os.makedirs(f'{self.reports}')
         return True
