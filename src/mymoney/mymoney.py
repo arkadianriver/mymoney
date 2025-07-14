@@ -163,30 +163,31 @@ def mkdate(str):
 
 def categories_graph(prj, df):
 
-	spending_df = df.loc[~df['Category'].isin(['transfer'])] # filter out transfers
-	#spending_df.loc[:,'Amount'] = spending_df['Amount'].mul(-1) # change - to + because it's an 'expenses' chart
+	flows_df = df.loc[~df['Category'].isin(['transfer'])] # filter out transfers
+	#flows_df.loc[:,'Amount'] = flows_df['Amount'].mul(-1) # change - to + because it's an 'expenses' chart
 	
 	# add a Month column based on the dates
-	months = spending_df.apply(lambda row: pd.to_datetime(row.Date).strftime('%Y-%m'), axis=1)
-	spending_df = spending_df.assign(Month=months.values)
+	months = flows_df.apply(lambda row: pd.to_datetime(row.Date).strftime('%Y-%m'), axis=1)
+	flows_df = flows_df.assign(Month=months.values)
+	flows_df = flows_df.sort_values(by='Month')
 
 	# add a Flow column to specify income or expense
-	flow = spending_df.apply(lambda row: 'Income' if row.Amount > 0 else 'Expense', axis=1)
-	spending_df = spending_df.assign(Flow=flow.values)
+	flow = flows_df.apply(lambda row: 'Income' if row.Amount > 0 else 'Expense', axis=1)
+	flows_df = flows_df.assign(Flow=flow.values)
 
 	# add absolute value Amount based on Income/Expense
-	spending_df["AbsAmount"] = spending_df["Amount"].abs()
+	flows_df["AbsAmount"] = flows_df["Amount"].abs()
 
 	# add a MonthlyTotal column to see the resulting profit/loss for that month
-	spending_df['MonthlyTotal'] = spending_df.groupby(['Month'])['Amount'].transform('sum').apply(lambda x: "${:,.2f}".format(x))
+	flows_df['MonthlyTotal'] = flows_df.groupby(['Month'])['Amount'].transform('sum').apply(lambda x: "${:,.2f}".format(x))
 	
 	# get a sorted array of categories for a legend
-	sorted_tmp = spending_df.loc[:,['Category']].drop_duplicates().sort_values(by='Category').to_numpy()
+	sorted_tmp = flows_df.loc[:,['Category']].drop_duplicates().sort_values(by='Category').to_numpy()
 	sorted_cats = [x for [x] in sorted_tmp]
 
 	gfig = go.Figure()
 	for cat in list(reversed(sorted_cats)):
-		tmp_df = spending_df.query(f"Category == '{cat}'")
+		tmp_df = flows_df.query(f"Category == '{cat}'")
 		gfig.add_trace(go.Bar(
 				x=[tmp_df["Month"], tmp_df["Flow"]],
 				y=tmp_df["AbsAmount"], # TODO: Set the hover and add spacing between groups
@@ -194,6 +195,8 @@ def categories_graph(prj, df):
 				name=cat))
 	gfig.update_layout(barmode="stack")
 	gfig.write_html(f"{prj.reports}/income_expenses_{prj.period}.html")
+
+	spending_df = flows_df.loc[flows_df['Flow'] == 'Expense']
 
 	avg = spending_df.groupby(pd.PeriodIndex(spending_df['Date'], freq="M"))['Amount'].sum().mean()
 	return avg
