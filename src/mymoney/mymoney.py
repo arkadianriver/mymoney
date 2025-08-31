@@ -147,6 +147,10 @@ def dump_df(prj, df):
 	with open(f"{prj.reports}/transactions_{prj.period}.csv", 'w', encoding='utf-8') as f:
 		with pd.option_context('display.max_rows', None, 'display.max_columns', None):
 			f.write(df.to_csv(float_format='%.2f'))
+	
+	ttl_income  = df[(df['Amount'] > 0) & (df['Category'] != 'transfer')]['Amount'].sum()
+	ttl_expense = abs(df[(df['Amount'] < 0) & (df['Category'] != 'transfer')]['Amount'].sum())
+	return (ttl_income, ttl_expense)
 
 
 def monthly_net_income(prj, df):
@@ -322,7 +326,7 @@ def main():
 	balance_graph(prj, df)
 
 	# Text dump of all the transactions (the dataframe)
-	dump_df(prj, df)
+	(ttl_income, ttl_expense) = dump_df(prj, df)
 
 	# HTML graph of monthly net income (P+L)
 	monthly_net_income(prj, df)
@@ -336,10 +340,12 @@ def main():
 	# Ending balance and average monthly spending
 	s = textwrap.dedent(f'''\
 		
-		---------------------------------------
-		 Average monthly spending: {locale.currency(avg*-1, grouping=True)}
-		 Statement ending balance: {locale.currency(df["Balance"].iloc[-1], grouping=True)}
-		---------------------------------------
+		-----------------------------------------
+		 Average monthly spending:    {locale.currency(avg*-1, grouping=True).rjust(11)}
+		 Statement ending balance:    {locale.currency(df["Balance"].iloc[-1], grouping=True).rjust(11)}
+		 Total net income for period: {locale.currency(ttl_income, grouping=True).rjust(11)}
+		 Total expenses for period:   {locale.currency(ttl_expense, grouping=True).rjust(11)}
+		-----------------------------------------
 		''')
 	banner(s)
 	with open(f"{prj.reports}/avg_and_balance.txt", 'w', encoding='utf-8') as f:
