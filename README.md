@@ -34,13 +34,8 @@ After you set up a project folder and the `config.yml` for all of your accounts,
    time it runs across a matching description, it will automatically be assigned a category without asking.
    (The more you use it, the more automated it is.)
 
-   > [!TIP]
-   >
-   > If you use monthly periods like I do, named as `YYYYMM`,
-   > you can get the year-to-date aggregate of the monthly periods for that year,
-   > by running:
-   >
-   >     mymoney <year>YTD
+> [!TIP]
+> If you use monthly periods like I do, named as `YYYYMM`, you can get the year-to-date aggregate of the monthly periods for that year, by running `mymoney <year>YTD`.
 
 That's it! When it's done, the following visualizations will be in the
 folder `{project_name}/{period}/reports`.
