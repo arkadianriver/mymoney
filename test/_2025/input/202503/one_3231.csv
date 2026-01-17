@@ -1,0 +1,13 @@
+date,description,amount,type
+2025-03-20,Coffee Corner,6.75,debit
+2025-03-20,Internet Service Provider,79.99,debit
+2025-03-17,Online Retail Shop,92.60,debit
+2025-03-15,Citibank VISA payment,300.00,debit
+2025-03-15,Zippy Auto Loans,137.34,debit
+2025-03-10,FreshMart Grocery,110.25,debit
+2025-03-09,Online Subscription Tool,11.99,debit
+2025-03-07,Mobile Phone Carrier,89.00,debit
+2025-03-05,Streaming Service Plus,15.99,debit
+2025-03-02,City Electric Utility,135.09,debit
+2025-03-01,Payroll Deposit - Employer Inc,3200.00,credit
+2025-03-01,December Rent - Parkview Apartments,1450.00,debit

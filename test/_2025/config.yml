@@ -1,0 +1,25 @@
+
+current_balances:
+  onebank_3231        :  $ 8,000.00
+  citibank_visa_0908  : -$   450.00
+
+format:
+#  account:
+#    columns:  [date_column, description_column, amount_column]
+#    row_order: (ascending, descending), default 'descending'
+#    date_format: default '%Y-%m-%d'
+#    trans_type: column that denotes 'credit' or 'debit' (when to change the amount to negative)
+#    rules: [ [ haystack, # column to search (not necessarily description)
+#               needle,   # regex used to search the column,
+#               action ], # what to do if regex search matches (include|exclude)
+#              ...]
+
+  one_3231:
+    columns: [0,1,2]
+    trans_type: 3
+
+  citi_0908:
+    columns: [0,1,2]
+    row_order: ascending
+    date_format: '%m/%d/%Y'
+

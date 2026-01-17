@@ -1,0 +1,7 @@
+
+-----------------------------------------
+ Average monthly spending:      $2,853.14
+ Statement ending balance:      $7,550.00
+ Total net income for period:   $3,200.00
+ Total expenses for period:     $2,853.14
+-----------------------------------------
