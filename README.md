@@ -4,11 +4,10 @@
 Keep track of the total balance of your accounts and your categorized monthly spending
 in a semi-automated way.
 
+
 ## Setup
 
 Requires [Python 3.9 or later](https://wiki.python.org/moin/BeginnersGuide/Download).
-
-TODO .. explain how to set up the `config.yml` file
 
 
 ## To use
@@ -30,9 +29,9 @@ After you set up a project folder and the `config.yml` for all of your accounts,
 
         mymoney {period}
 
-   As it reads each transaction, you'll be asked to categorize the transaction based on
-   a regular expression search string, so that the next time it runs across the same description,
-   it can automatically be assigned a category without asking.
+   As it reads each transaction, you'll be asked to (1) type a string that matches the transation
+   with a regular exxpression and (2) the category for transactions that matches this one. Next
+   time it runs across a matching description, it will automatically be assigned a category without asking.
    (The more you use it, the more automated it is.)
 
    > [!TIP]
@@ -48,8 +47,9 @@ folder `{project_name}/{period}/reports`.
 
 |Report|Description|
 |---|---|
-|`avg_and_balance.txt`|short summary of the total ending balance and average monthly spending (only really useful for `YTD` periods)|
+|`avg_and_balance.txt`|short summary of the total ending balance and average monthly spending (primarily useful for `YTD` periods)|
 |`balance_{period}.html`|the total running balance of all your accounts as a line graph|
-|`breakdown_{period}.md`|a document of transactions, organized by category|
-|`spending_{period}.html`|a monthly spending bar chart, with a category breakdown in each bar|
-|`transactions_{period}.txt`|sorted list of all transactions|
+|`breakdown_{period}.[md\|html]`|transactions for the period, organized by category|
+|`income_expenses_{period}.html`|a monthly spending bar chart, with a category breakdown in each bar|
+|`transactions_{period}.[txt\|csv]`|sorted list of all transactions|
+
