@@ -7,7 +7,7 @@ where = ["src"]
 
 [project]
 name = "mymoney"
-version = "1.0"
+version = "1.0.1"
 description = "Visualize and keep track of personal finances"
 authors = [
 	{name = "Gary Faircloth", email = "arkadianriver@gmail.com"}
