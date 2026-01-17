@@ -1,7 +1,15 @@
 name: Python Workflow
-on: push
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
 jobs:
-  run-python:
+  build-and-deploy:
+
     runs-on: ubuntu-latest
 
     steps:
