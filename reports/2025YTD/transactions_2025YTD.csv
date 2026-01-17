@@ -1,0 +1,120 @@
+Date,Amount,Account,Description,Category,Balance
+2025-01-01,3200.00,one_3231,payroll deposit - employer inc,paycheck,10153.50
+2025-01-01,-1450.00,one_3231,october rent - parkview apartments,rent,8703.50
+2025-01-02,-118.42,one_3231,city electric utility,utilities,8585.08
+2025-01-02,-64.18,citi_0908,freshmart grocery,groceries,8520.90
+2025-01-03,-9.75,citi_0908,corner cafe breakfast,food,8511.15
+2025-01-03,-42.10,citi_0908,gas station fuel,gas,8469.05
+2025-01-04,-18.64,citi_0908,pharmacy plus,sundries,8450.41
+2025-01-04,-37.29,citi_0908,online retail shop,shopping,8413.12
+2025-01-05,-15.99,one_3231,streaming service plus,streaming,8397.13
+2025-01-05,-12.45,citi_0908,quickbite lunch,food,8384.68
+2025-01-06,-81.22,citi_0908,freshmart grocery,groceries,8303.46
+2025-01-06,-29.90,citi_0908,pet supply store,pets,8273.56
+2025-01-07,-89.00,one_3231,mobile phone carrier,phone,8184.56
+2025-01-07,-5.85,citi_0908,coffee corner,food,8178.71
+2025-01-08,-22.47,citi_0908,office supply depot,shopping,8156.24
+2025-01-08,-39.76,citi_0908,gas station fuel,gas,8116.48
+2025-01-09,-11.99,one_3231,online subscription tool,subscriptions,8104.49
+2025-01-09,-16.84,citi_0908,fast casual grill,food,8087.65
+2025-01-10,-72.55,one_3231,freshmart grocery,groceries,8015.10
+2025-01-10,-44.61,citi_0908,household goods store,shopping,7970.49
+2025-01-11,-7.25,citi_0908,local bakery,food,7963.24
+2025-01-11,-18.33,citi_0908,ride share trip,auto,7944.91
+2025-01-12,-54.60,citi_0908,water & sewer utility,utilities,7890.31
+2025-01-12,-13.20,citi_0908,quickbite lunch,food,7877.11
+2025-01-13,-41.05,citi_0908,gas station fuel,gas,7836.06
+2025-01-13,-26.18,citi_0908,discount retail store,sundries,7809.88
+2025-01-14,-6.10,citi_0908,coffee corner,food,7803.78
+2025-01-14,-4.99,citi_0908,streaming movie rental,streaming,7798.79
+2025-01-15,-300.00,one_3231,citibank visa payment,transfer,7498.79
+2025-01-15,-132.88,one_3231,auto insurance premium,insurance,7365.91
+2025-01-15,-137.34,one_3231,zippy auto loans,auto,7228.57
+2025-01-15,-95.44,citi_0908,freshmart grocery,groceries,7133.13
+2025-01-15,300.00,citi_0908,one bank payment,transfer,7433.13
+2025-01-16,-22.19,citi_0908,pharmacy plus,sundries,7410.94
+2025-01-16,-19.05,citi_0908,fast casual grill,food,7391.89
+2025-01-17,-58.63,one_3231,online retail shop,shopping,7333.26
+2025-01-17,-43.87,citi_0908,gas station fuel,gas,7289.39
+2025-01-18,-14.75,citi_0908,local deli lunch,food,7274.64
+2025-01-18,-31.92,citi_0908,home cleaning supplies,household,7242.72
+2025-01-19,-67.80,citi_0908,freshmart grocery,groceries,7174.92
+2025-01-20,-5.95,one_3231,coffee corner,food,7168.97
+2025-01-20,-79.99,one_3231,internet service provider,cable,7088.98
+2025-02-01,3200.00,one_3231,payroll deposit - employer inc,paycheck,10288.98
+2025-02-01,-1450.00,one_3231,november rent - parkview apartments,rent,8838.98
+2025-02-02,-121.77,one_3231,city electric utility,utilities,8717.21
+2025-02-02,-69.34,citi_0908,freshmart grocery,groceries,8647.87
+2025-02-02,-8.10,citi_0908,local bakery,food,8639.77
+2025-02-02,-21.40,citi_0908,ride share trip,auto,8618.37
+2025-02-03,-10.25,citi_0908,corner cafe breakfast,food,8608.12
+2025-02-03,-44.92,citi_0908,gas station fuel,gas,8563.20
+2025-02-04,-16.48,citi_0908,pharmacy plus,sundries,8546.72
+2025-02-04,-41.66,citi_0908,online retail shop,shopping,8505.06
+2025-02-05,-15.99,one_3231,streaming service plus,streaming,8489.07
+2025-02-05,-11.85,citi_0908,quickbite lunch,food,8477.22
+2025-02-06,-88.70,citi_0908,freshmart grocery,groceries,8388.52
+2025-02-06,-34.15,citi_0908,pet supply store,pets,8354.37
+2025-02-07,-89.00,one_3231,mobile phone carrier,phone,8265.37
+2025-02-07,-6.05,citi_0908,coffee corner,food,8259.32
+2025-02-08,-19.83,citi_0908,office supply depot,shopping,8239.49
+2025-02-08,-38.40,citi_0908,gas station fuel,gas,8201.09
+2025-02-09,-11.99,one_3231,online subscription tool,subscriptions,8189.10
+2025-02-09,-17.92,citi_0908,fast casual grill,food,8171.18
+2025-02-10,-76.14,one_3231,freshmart grocery,groceries,8095.04
+2025-02-10,-52.27,citi_0908,household goods store,shopping,8042.77
+2025-02-12,-53.88,citi_0908,water & sewer utility,utilities,7988.89
+2025-02-12,-14.05,citi_0908,quickbite lunch,food,7974.84
+2025-02-13,-45.66,citi_0908,gas station fuel,gas,7929.18
+2025-02-13,-33.72,citi_0908,discount retail store,sundries,7895.46
+2025-02-14,-5.70,citi_0908,coffee corner,food,7889.76
+2025-02-14,-6.99,citi_0908,streaming movie rental,streaming,7882.77
+2025-02-15,-300.00,one_3231,citibank visa payment,transfer,7582.77
+2025-02-15,-137.34,one_3231,zippy auto loans,auto,7445.43
+2025-02-15,300.00,citi_0908,one bank payment,transfer,7745.43
+2025-02-16,-25.07,citi_0908,pharmacy plus,sundries,7720.36
+2025-02-16,-20.11,citi_0908,fast casual grill,food,7700.25
+2025-02-17,-64.20,one_3231,online retail shop,shopping,7636.05
+2025-02-18,-15.25,citi_0908,local deli lunch,food,7620.80
+2025-02-18,-28.49,citi_0908,home cleaning supplies,household,7592.31
+2025-02-19,-70.33,citi_0908,freshmart grocery,groceries,7521.98
+2025-02-20,-6.15,one_3231,coffee corner,food,7515.83
+2025-02-20,-79.99,one_3231,internet service provider,cable,7435.84
+2025-03-01,3200.00,one_3231,payroll deposit - employer inc,paycheck,10635.84
+2025-03-01,-1450.00,one_3231,december rent - parkview apartments,rent,9185.84
+2025-03-02,-135.09,one_3231,city electric utility,utilities,9050.75
+2025-03-02,-82.66,citi_0908,freshmart grocery,groceries,8968.09
+2025-03-03,-11.40,citi_0908,corner cafe breakfast,food,8956.69
+2025-03-03,-46.88,citi_0908,gas station fuel,gas,8909.81
+2025-03-03,-58.91,citi_0908,water & sewer utility,utilities,8850.90
+2025-03-03,-15.10,citi_0908,quickbite lunch,food,8835.80
+2025-03-04,-19.72,citi_0908,pharmacy plus,sundries,8816.08
+2025-03-04,-73.91,citi_0908,online retail shop,shopping,8742.17
+2025-03-05,-15.99,one_3231,streaming service plus,streaming,8726.18
+2025-03-05,-13.60,citi_0908,quickbite lunch,food,8712.58
+2025-03-06,-97.88,citi_0908,freshmart grocery,groceries,8614.70
+2025-03-06,-39.22,citi_0908,pet supply store,pets,8575.48
+2025-03-07,-89.00,one_3231,mobile phone carrier,phone,8486.48
+2025-03-07,-6.30,citi_0908,coffee corner,food,8480.18
+2025-03-08,-27.45,citi_0908,office supply depot,shopping,8452.73
+2025-03-08,-49.03,citi_0908,gas station fuel,gas,8403.70
+2025-03-09,-11.99,one_3231,online subscription tool,subscriptions,8391.71
+2025-03-09,-22.40,citi_0908,fast casual grill,food,8369.31
+2025-03-10,-110.25,one_3231,freshmart grocery,groceries,8259.06
+2025-03-10,-68.14,citi_0908,household goods store,shopping,8190.92
+2025-03-11,-9.65,citi_0908,local bakery,food,8181.27
+2025-03-11,-24.80,citi_0908,ride share trip,auto,8156.47
+2025-03-13,-47.55,citi_0908,gas station fuel,gas,8108.92
+2025-03-13,-45.89,citi_0908,discount retail store,sundries,8063.03
+2025-03-14,-5.99,citi_0908,streaming movie rental,streaming,8057.04
+2025-03-15,-300.00,one_3231,citibank visa payment,transfer,7757.04
+2025-03-15,-137.34,one_3231,zippy auto loans,auto,7619.70
+2025-03-15,300.00,citi_0908,one bank payment,transfer,7919.70
+2025-03-16,-28.35,citi_0908,pharmacy plus,sundries,7891.35
+2025-03-16,-23.18,citi_0908,fast casual grill,food,7868.17
+2025-03-17,-92.60,one_3231,online retail shop,shopping,7775.57
+2025-03-18,-16.90,citi_0908,local deli lunch,food,7758.67
+2025-03-18,-36.74,citi_0908,home cleaning supplies,household,7721.93
+2025-03-19,-85.19,citi_0908,freshmart grocery,groceries,7636.74
+2025-03-20,-6.75,one_3231,coffee corner,food,7629.99
+2025-03-20,-79.99,one_3231,internet service provider,cable,7550.00

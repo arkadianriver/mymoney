@@ -1,0 +1,44 @@
+             Amount    Account                         Description       Category   Balance
+Date                                                                                       
+2025-01-01  3200.00   one_3231      payroll deposit - employer inc       paycheck  10614.52
+2025-01-01 -1450.00   one_3231  october rent - parkview apartments           rent   9164.52
+2025-01-02  -118.42   one_3231               city electric utility      utilities   9046.10
+2025-01-02   -64.18  citi_0908                   freshmart grocery      groceries   8981.92
+2025-01-03    -9.75  citi_0908               corner cafe breakfast           food   8972.17
+2025-01-03   -42.10  citi_0908                    gas station fuel            gas   8930.07
+2025-01-04   -18.64  citi_0908                       pharmacy plus       sundries   8911.43
+2025-01-04   -37.29  citi_0908                  online retail shop       shopping   8874.14
+2025-01-05   -15.99   one_3231              streaming service plus      streaming   8858.15
+2025-01-05   -12.45  citi_0908                     quickbite lunch           food   8845.70
+2025-01-06   -81.22  citi_0908                   freshmart grocery      groceries   8764.48
+2025-01-06   -29.90  citi_0908                    pet supply store           pets   8734.58
+2025-01-07   -89.00   one_3231                mobile phone carrier          phone   8645.58
+2025-01-07    -5.85  citi_0908                       coffee corner           food   8639.73
+2025-01-08   -22.47  citi_0908                 office supply depot       shopping   8617.26
+2025-01-08   -39.76  citi_0908                    gas station fuel            gas   8577.50
+2025-01-09   -11.99   one_3231            online subscription tool  subscriptions   8565.51
+2025-01-09   -16.84  citi_0908                   fast casual grill           food   8548.67
+2025-01-10   -72.55   one_3231                   freshmart grocery      groceries   8476.12
+2025-01-10   -44.61  citi_0908               household goods store       shopping   8431.51
+2025-01-11    -7.25  citi_0908                        local bakery           food   8424.26
+2025-01-11   -18.33  citi_0908                     ride share trip           auto   8405.93
+2025-01-12   -54.60  citi_0908               water & sewer utility      utilities   8351.33
+2025-01-12   -13.20  citi_0908                     quickbite lunch           food   8338.13
+2025-01-13   -41.05  citi_0908                    gas station fuel            gas   8297.08
+2025-01-13   -26.18  citi_0908               discount retail store       sundries   8270.90
+2025-01-14    -6.10  citi_0908                       coffee corner           food   8264.80
+2025-01-14    -4.99  citi_0908              streaming movie rental      streaming   8259.81
+2025-01-15  -300.00   one_3231               citibank visa payment       transfer   7959.81
+2025-01-15  -132.88   one_3231              auto insurance premium      insurance   7826.93
+2025-01-15  -137.34   one_3231                    zippy auto loans           auto   7689.59
+2025-01-15   -95.44  citi_0908                   freshmart grocery      groceries   7594.15
+2025-01-15   300.00  citi_0908                    one bank payment       transfer   7894.15
+2025-01-16   -22.19  citi_0908                       pharmacy plus       sundries   7871.96
+2025-01-16   -19.05  citi_0908                   fast casual grill           food   7852.91
+2025-01-17   -58.63   one_3231                  online retail shop       shopping   7794.28
+2025-01-17   -43.87  citi_0908                    gas station fuel            gas   7750.41
+2025-01-18   -14.75  citi_0908                    local deli lunch           food   7735.66
+2025-01-18   -31.92  citi_0908              home cleaning supplies      household   7703.74
+2025-01-19   -67.80  citi_0908                   freshmart grocery      groceries   7635.94
+2025-01-20    -5.95   one_3231                       coffee corner           food   7629.99
+2025-01-20   -79.99   one_3231           internet service provider          cable   7550.00
