@@ -2,7 +2,9 @@
 # mymoney
 
 Keep track of the total balance of your accounts and your categorized monthly spending
-in a semi-automated way.
+in a semi-automated way. Afterward,
+<a href="https://arkadianriver.github.io/mymoney/">visualize it in a series of reports</a>
+(useful for seeing your year-to-date spending).
 
 
 ## Setup
