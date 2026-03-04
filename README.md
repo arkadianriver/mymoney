@@ -11,6 +11,18 @@ in a semi-automated way. Afterward,
 
 Requires [Python 3.9 or later](https://wiki.python.org/moin/BeginnersGuide/Download).
 
+1. Clone the repository, and from inside the repository folder, install it with:
+
+       pip install .
+
+   When installed with the system Python, the program `mymoney` is now available
+   to run from a project directory anywhere on your computer.
+   
+1. In a folder of your choosing (outside this repository),
+   create a project folder that contains a `config.yml` file. See the `test` folder for an example;
+   it has a project folder for 2025 named `_2025`.
+   Comments in the test `config.yml` describe the settings to use to describe the format
+   of each of your institutions' CSV files.
 
 ## To use
 
@@ -21,13 +33,12 @@ After you set up a project folder and the `config.yml` for all of your accounts,
 
 1. From your banking websites, download the transactions as CSV files into that `{project_name}/input/{period}` folder.
    Be sure the files contain only the transactions for the period.
-   (Eventually, this could be automated too with a banking API, such as the one that Stripe membership provides.)
 
    For each bank you visit, also take note of the balance at the end
    of the period you're tracking and add it to the `current_balance`
    section of the `config.yml` file.
 
-1. Run:
+1. From the project folder, run:
 
         mymoney {period}
 
