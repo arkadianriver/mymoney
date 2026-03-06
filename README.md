@@ -6,10 +6,8 @@ in a semi-automated way. Afterward,
 <a href="https://arkadianriver.github.io/mymoney/">visualize it in a series of reports</a>
 (useful for seeing your year-to-date spending).
 
-<img src="report_1.png" alt="" style="width:320px"/>
-<img src="report_2.png" alt="" style="width:320px"/>
-<img src="report_3.png" alt="" style="width:320px"/>
-<img src="report_4.png" alt="" style="width:320px"/>
+<img src="report_1.png" alt="" style="width:320px"/> <img src="report_2.png" alt="" style="width:320px"/>
+<img src="report_3.png" alt="" style="width:320px"/> <img src="report_4.png" alt="" style="width:320px"/>
 
 
 ## Setup
