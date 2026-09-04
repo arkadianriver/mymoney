@@ -47,7 +47,7 @@ class Categories:
 
 
     def _getcat(self,
-            prompt = "Enter a new category or 'q' to quit.",
+            prompt = "Enter a category or 'q' to quit.",
             max_chars = 16):
         prompt = f"{prompt}\nCategories must be under {max_chars} characters."
         cat = ''
